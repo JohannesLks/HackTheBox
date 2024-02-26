@@ -1,3 +1,30 @@
+/*
+AES Decryption Tool for Napper Challenge
+
+Author: Lukas Johannes Möller
+Date: 24.02.2024
+License: MIT License
+
+This Go script is designed to decrypt data encrypted with AES-128 in CFB mode. It is specifically tailored for use in the Hack The Box machine "Napper" challenge, providing a means to decrypt data using a seed-based key generation approach. The script accepts two crucial pieces of information via command-line arguments: a seed used for key generation and the base64-encoded encrypted data.
+
+The decryption process involves the following steps:
+1. Generating a 128-bit AES key from the provided seed.
+2. Decoding the base64-encoded encrypted data to retrieve the ciphertext.
+3. Using the AES key and Cipher Feedback (CFB) mode to decrypt the ciphertext and obtain the original plaintext.
+
+Prerequisites:
+- Go (Golang) environment set up on the machine where the script will be run.
+
+Usage:
+The script is executed from the command line, where the seed and encrypted data are passed as arguments:
+    go run decrypt.go -seed=<seed> -data="<base64-encoded-data>"
+
+Example:
+    go run decrypt.go -seed=46385390 -data="tbjZvSCUhZtSmOqEYO1TFmX-ibTWLnMJc6CQJHZ_aM6alBTptvEaiMEvjv_Jfx33T7spOEMKOXg="
+
+This script serves as an educational tool for understanding AES decryption and should be used in accordance with ethical guidelines and applicable laws.
+
+*/
 package main
 
 import (
